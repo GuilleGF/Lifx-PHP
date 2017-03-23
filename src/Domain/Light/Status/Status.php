@@ -1,5 +1,7 @@
 <?php
 
+namespace GuilleGF\Lifx\Light\Status;
+
 /**
  * Class Status
  */

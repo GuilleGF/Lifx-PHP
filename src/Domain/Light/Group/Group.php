@@ -1,5 +1,7 @@
 <?php
 
+namespace GuilleGF\Lifx\Light\Group;
+
 /**
  * Class Group
  */
