@@ -1,11 +1,11 @@
 <?php
 
-namespace GuilleGF\Lifx\Light\Location;
+namespace GuilleGF\Lifx\Domain\Group;
 
 /**
- * Class Location
+ * Class Group
  */
-class Location
+class Group
 {
     /** @var string */
     private $id;
@@ -13,7 +13,7 @@ class Location
     private $name;
 
     /**
-     * Location constructor.
+     * Group constructor.
      * @param string $id
      * @param string $name
      */
@@ -33,14 +33,14 @@ class Location
 
     /**
      * @param string $id
-     * @return Location
+     * @return Group
      */
-    private function setId(string $id): Location
+    private function setId(string $id): Group
     {
         if (empty($id)) {
-            throw new \InvalidArgumentException('Location id can not be empty');
+            throw new \InvalidArgumentException('Group id can not be empty');
         } elseif (strlen($id) != 32) {
-            throw new \LengthException('Location id must be 32 characters');
+            throw new \LengthException('Group id must be 32 characters');
         }
 
         $this->id = $id;
@@ -58,12 +58,12 @@ class Location
 
     /**
      * @param string $name
-     * @return Location
+     * @return Group
      */
-    private function setName(string $name): Location
+    private function setName(string $name): Group
     {
         if (empty($name)) {
-            throw new \InvalidArgumentException('Location name can not be empty');
+            throw new \InvalidArgumentException('Group name can not be empty');
         }
 
         $this->name = $name;

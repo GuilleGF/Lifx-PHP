@@ -1,6 +1,6 @@
 <?php
 
-namespace GuilleGF\Lifx\Light\Product;
+namespace GuilleGF\Lifx\Domain\Product;
 
 /**
  * Class Product

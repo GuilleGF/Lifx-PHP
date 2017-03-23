@@ -1,18 +1,18 @@
 <?php
 
-namespace GuilleGF\Lifx\Selector;
+namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
- * Class SceneId
+ * Class Label
  * @package GuilleGF\Lifx\Selector
  */
-class SceneId extends Selector
+class Label extends Selector
 {
     /**
      * @return string
      */
     public function value()
     {
-        return 'scene_id:'.$this->value;
+        return 'label:'.$this->value;
     }
 }

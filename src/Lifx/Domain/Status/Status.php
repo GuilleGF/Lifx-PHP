@@ -1,6 +1,6 @@
 <?php
 
-namespace GuilleGF\Lifx\Light\Status;
+namespace GuilleGF\Lifx\Domain\Status;
 
 /**
  * Class Status

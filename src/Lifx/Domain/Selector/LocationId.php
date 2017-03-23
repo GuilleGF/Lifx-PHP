@@ -1,18 +1,19 @@
 <?php
 
-namespace GuilleGF\Lifx\Selector;
+namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
- * Class All
+ * Class LocationId
+ * @package GuilleGF\Lifx\Selector
  */
-class All extends Selector
+class LocationId extends Selector
 {
     /**
      * @return string
      */
     public function value()
     {
-        return 'all';
+        return 'location_id:'.$this->value;
     }
 
     /**
@@ -21,6 +22,6 @@ class All extends Selector
      */
     protected function isValid($value)
     {
-        return true;
+        return strlen($value) === 32;
     }
 }

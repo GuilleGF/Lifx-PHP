@@ -1,6 +1,6 @@
 <?php
 
-namespace GuilleGF\Lifx\Selector;
+namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class Selector

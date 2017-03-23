@@ -2,8 +2,6 @@
 
 namespace GuilleGF\Lifx\Domain\Selector;
 
-use GuilleGF\Lifx\Selector\Selector;
-
 /**
  * Class SelectorCollection
  * @package GuilleGF\Lifx\Domain\Selector

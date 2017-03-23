@@ -1,6 +1,6 @@
 <?php
 
-namespace GuilleGF\Lifx\Light\Color;
+namespace GuilleGF\Lifx\Domain\Color;
 
 /**
  * Class Color

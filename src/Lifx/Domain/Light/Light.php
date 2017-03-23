@@ -1,6 +1,12 @@
 <?php
 
-namespace GuilleGF\Lifx\Light;
+namespace GuilleGF\Lifx\Domain\Light;
+
+use GuilleGF\Lifx\Domain\Color\Color;
+use GuilleGF\Lifx\Domain\Group\Group;
+use GuilleGF\Lifx\Domain\Location\Location;
+use GuilleGF\Lifx\Domain\Product\Product;
+use GuilleGF\Lifx\Domain\Status\Status;
 
 /**
  * Class Light
