@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "GuilleGF\\Lifx\\": "src/"
+      "GuilleGF\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "GuilleGF\\Tests\\": "tests/"
+      "GuilleGF\\Lifx\\Tests\\": "tests/"
     }
   },
   "config": {
