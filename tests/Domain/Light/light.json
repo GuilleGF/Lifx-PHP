@@ -1,0 +1,38 @@
+[
+  {
+    "id": "d073d513da7c",
+    "uuid": "02b8f6d2-e45e-473c-a22d-0a410f8a3088",
+    "label": "LIFX Molona",
+    "connected": true,
+    "power": "on",
+    "color": {
+      "hue": 150.6193636987869,
+      "saturation": 0.579995422293431,
+      "kelvin": 3000
+    },
+    "zones": null,
+    "brightness": 0.26999313344014647,
+    "group": {
+      "id": "f81ca8c3a22dfa7289bd57734c214e8c",
+      "name": "Salón"
+    },
+    "location": {
+      "id": "fa616a5ec7fe8fa63994ce7fe01b9327",
+      "name": "Casa"
+    },
+    "product": {
+      "name": "Color 1000",
+      "identifier": "lifx_color_a19",
+      "company": "LIFX",
+      "capabilities": {
+        "has_color": true,
+        "has_variable_color_temp": true,
+        "has_ir": false,
+        "has_multizone": false
+      }
+    },
+    "infrared": null,
+    "last_seen": "2017-03-22T22:10:20.134+00:00",
+    "seconds_since_seen": 0.002424063
+  }
+]
