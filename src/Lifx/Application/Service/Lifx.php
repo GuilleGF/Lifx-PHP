@@ -5,6 +5,7 @@ namespace GuilleGF\Lifx;
 use GuilleGF\Lifx\Application\Service\LifxClient;
 use GuilleGF\Lifx\Domain\Light\Light;
 use GuilleGF\Lifx\Domain\Selector\All;
+use GuilleGF\Lifx\Domain\Selector\Id;
 use GuilleGF\Lifx\Domain\Selector\SelectorCollection;
 use GuilleGF\Lifx\Infrastructure\HttpClient\HttpClientFactory;
 
@@ -33,14 +34,19 @@ class Lifx
     /**
      * @return Light[]
      */
-    public function listAllLights()
+    public function lights(): array
     {
-        $lights = $this->client->listLights(
-            new SelectorCollection(
-                [new All()]
-            )
-        );
+        $lights = $this->client->listLights(new SelectorCollection([new All()]));
 
         return $lights;
+    }
+
+    /**
+     * @param string $id
+     * @return Light[]
+     */
+    public function light(string $id): array
+    {
+        return $this->client->listLights(new SelectorCollection([new Id($id)]));
     }
 }
