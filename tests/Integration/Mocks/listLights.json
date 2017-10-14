@@ -1,8 +1,8 @@
 [
   {
-    "id": "d073d513da7c",
-    "uuid": "02b8f6d2-e45e-473c-a22d-0a410f8a3088",
-    "label": "LIFX Molona",
+    "id": "13da7cd073d5",
+    "uuid": "0f8a3088-a22d-473c-b45e-0a4102b8f6d2",
+    "label": "LIFX Cool",
     "connected": true,
     "power": "on",
     "color": {
@@ -13,12 +13,12 @@
     "zones": null,
     "brightness": 0.26999313344014647,
     "group": {
-      "id": "f81ca8c3a22dfa7289bd57734c214e8c",
-      "name": "Salón"
+      "id": "7289bd57734c214e8cf81ca8c3a22dfa",
+      "name": "LivingRoom"
     },
     "location": {
-      "id": "fa616a5ec7fe8fa63994ce7fe01b9327",
-      "name": "Casa"
+      "id": "3994ce7fe01b9327fa616a5ec7fe8fa6",
+      "name": "Home"
     },
     "product": {
       "name": "Color 1000",
