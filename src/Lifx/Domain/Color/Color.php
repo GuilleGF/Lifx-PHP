@@ -23,6 +23,21 @@ class Color
     ];
 
     /**
+     * Color constructor.
+     * @param float $hue
+     * @param float $saturation
+     * @param int $kelvin
+     * @param float $brightness
+     */
+    public function __construct(float $hue, float $saturation, int $kelvin, float $brightness)
+    {
+        $this->setHue($hue);
+        $this->setSaturation($saturation);
+        $this->setKelvin($kelvin);
+        $this->setBrightness($brightness);
+    }
+
+    /**
      * @return float
      */
     public function hue(): float

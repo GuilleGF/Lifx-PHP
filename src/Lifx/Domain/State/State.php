@@ -1,11 +1,11 @@
 <?php
 
-namespace GuilleGF\Lifx\Domain\Status;
+namespace GuilleGF\Lifx\Domain\State;
 
 /**
  * Class Status
  */
-class Status
+class State
 {
     /** @var bool */
     private $connected;
@@ -13,7 +13,7 @@ class Status
     private $power;
 
     /**
-     * Status constructor.
+     * State constructor.
      * @param bool $connected
      * @param string $power
      */
@@ -49,12 +49,12 @@ class Status
 
     /**
      * @param string $power
-     * @return Status
+     * @return State
      */
-    private function setPower(string $power): Status
+    private function setPower(string $power): State
     {
         if ($power !== 'on' && $power !== 'off') {
-            throw new \InvalidArgumentException('Power must be on or off');
+            throw new \UnexpectedValueException('Power must be on or off');
         }
 
         $this->power = $power;

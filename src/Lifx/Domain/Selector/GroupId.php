@@ -2,6 +2,8 @@
 
 namespace GuilleGF\Lifx\Domain\Selector;
 
+use GuilleGF\Lifx\Domain\Validator\Validator;
+
 /**
  * Class GroupId
  * @package GuilleGF\Lifx\Selector
@@ -22,6 +24,10 @@ class GroupId extends Selector
      */
     protected function isValid($value)
     {
-        return strlen($value) === 32;
+        if (!Validator::hash32($value)) {
+            throw new \LengthException('Selector group id must be 32 characters');
+        }
+
+        return parent::isValid($value);
     }
 }

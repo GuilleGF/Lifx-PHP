@@ -2,6 +2,8 @@
 
 namespace GuilleGF\Lifx\Domain\Selector;
 
+use GuilleGF\Lifx\Domain\Validator\Validator;
+
 /**
  * Class SceneId
  * @package GuilleGF\Lifx\Selector
@@ -14,5 +16,18 @@ class SceneId extends Selector
     public function value()
     {
         return 'scene_id:'.$this->value;
+    }
+
+    /**
+     * @param string $value
+     * @return bool
+     */
+    protected function isValid($value)
+    {
+        if (!Validator::UUID($value)) {
+            throw new \InvalidArgumentException('Selector scene uuid format is invalid');
+        }
+
+        return parent::isValid($value);
     }
 }

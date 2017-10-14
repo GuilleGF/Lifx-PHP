@@ -6,7 +6,8 @@ use GuilleGF\Lifx\Domain\Color\Color;
 use GuilleGF\Lifx\Domain\Group\Group;
 use GuilleGF\Lifx\Domain\Location\Location;
 use GuilleGF\Lifx\Domain\Product\Product;
-use GuilleGF\Lifx\Domain\Status\Status;
+use GuilleGF\Lifx\Domain\State\State;
+use GuilleGF\Lifx\Domain\Validator\Validator;
 
 /**
  * Class Light
@@ -19,8 +20,8 @@ class Light
     private $uuid;
     /** @var string */
     private $label;
-    /** @var Status */
-    private $status;
+    /** @var State */
+    private $state;
     /** @var Color */
     private $color;
     /** @var Group */
@@ -35,7 +36,7 @@ class Light
      * @param string $id
      * @param string $uuid
      * @param string $label
-     * @param Status $status
+     * @param State $state
      * @param Color $color
      * @param Group $group
      * @param Location $location
@@ -45,7 +46,7 @@ class Light
         string $id,
         string $uuid,
         string $label,
-        Status $status,
+        State $state,
         Color $color,
         Group $group,
         Location $location,
@@ -54,7 +55,7 @@ class Light
         $this->setId($id);
         $this->setUuid($uuid);
         $this->setLabel($label);
-        $this->status = $status;
+        $this->state = $state;
         $this->color = $color;
         $this->group = $group;
         $this->location = $location;
@@ -75,8 +76,8 @@ class Light
      */
     private function setId(string $id): Light
     {
-        if (empty($id)) {
-            throw new \InvalidArgumentException('Light id can not be empty');
+        if (!Validator::hash12($id)) {
+            throw new \InvalidArgumentException('Light id must be valid format');
         }
 
         $this->id = $id;
@@ -98,8 +99,8 @@ class Light
      */
     private function setUuid(string $uuid): Light
     {
-        if (empty($uuid)) {
-            throw new \InvalidArgumentException('Light uuid can not be empty');
+        if (!Validator::UUID($uuid)) {
+            throw new \InvalidArgumentException('Light uuid must be a valid UUID');
         }
 
         $this->uuid = $uuid;
@@ -131,11 +132,11 @@ class Light
     }
 
     /**
-     * @return Status
+     * @return State
      */
-    public function status(): Status
+    public function state(): State
     {
-        return $this->status;
+        return $this->state;
     }
 
     /**
