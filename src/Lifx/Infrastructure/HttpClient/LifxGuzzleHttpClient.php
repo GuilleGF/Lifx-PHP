@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Infrastructure\HttpClient;
 
 use GuilleGF\Lifx\LifxHttpClient;
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class LifxGuzzleHttpClient
@@ -14,7 +15,7 @@ class LifxGuzzleHttpClient implements LifxHttpClient
     /**
      * @var \GuzzleHttp\Client The Guzzle client.
      */
-    protected $guzzleClient;
+    private $guzzleClient;
 
     /**
      * @param \GuzzleHttp\Client|null The Guzzle client.
@@ -27,32 +28,61 @@ class LifxGuzzleHttpClient implements LifxHttpClient
     /**
      * @param string $endpoint
      * @param array $headers
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return mixed
      */
-    public function get($endpoint, $headers)
+    public function get(string $endpoint, array $headers)
     {
-        $response = $this->guzzleClient->get($endpoint, $headers);
-
-        return json_decode($response->getBody());
+        return $this->request('GET', $endpoint, ['headers' => $headers]);
     }
 
     /**
      * @param string $endpoint
      * @param array $headers
+     * @param string $body
      * @return mixed
      */
-    public function post($endpoint, $headers)
+    public function post(string $endpoint, array $headers, string $body)
     {
-        return $this->guzzleClient->post($endpoint, $headers);
+        return $this->request('POST', $endpoint, ['headers' => $headers, 'body' => $body]);
     }
 
     /**
      * @param string $endpoint
      * @param array $headers
+     * @param string $body
      * @return mixed
      */
-    public function put($endpoint, $headers)
+    public function put(string $endpoint, array $headers, string $body)
     {
-        return $this->guzzleClient->put($endpoint, $headers);
+        return $this->request('PUT', $endpoint, ['headers' => $headers, 'body' => $body]);
+    }
+
+    /**
+     * @param string $method
+     * @param string $endpoint
+     * @param array $options
+     * @return string
+     */
+    private function request(string $method, string $endpoint, array $options)
+    {
+        $response = $this->guzzleClient->request($method, $endpoint, $options);
+
+        return $this->jsonResponse($response);
+    }
+
+    /**
+     * @param ResponseInterface $response
+     * @return mixed
+     * @throws \Exception
+     */
+    private function jsonResponse(ResponseInterface $response)
+    {
+        $json = json_decode($response->getBody());
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \Exception(json_last_error_msg());
+        }
+
+        return $json;
     }
 }

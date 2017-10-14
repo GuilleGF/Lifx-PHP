@@ -13,19 +13,21 @@ interface LifxHttpClient
      * @param array $headers
      * @return mixed
      */
-    public function get($endpoint, $headers);
+    public function get(string $endpoint, array $headers);
 
     /**
      * @param string $endpoint
      * @param array $headers
+     * @param string $body
      * @return mixed
      */
-    public function post($endpoint, $headers);
+    public function post(string $endpoint, array $headers, string $body);
 
     /**
      * @param string $endpoint
      * @param array $headers
+     * @param string $body
      * @return mixed
      */
-    public function put($endpoint, $headers);
+    public function put(string $endpoint, array $headers, string $body);
 }
