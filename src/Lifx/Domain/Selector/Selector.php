@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 abstract class Selector
 {

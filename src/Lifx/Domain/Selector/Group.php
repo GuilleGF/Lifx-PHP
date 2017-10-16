@@ -4,7 +4,7 @@ namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class Group
- * @package GuilleGF\Lifx\Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class Group extends Selector
 {

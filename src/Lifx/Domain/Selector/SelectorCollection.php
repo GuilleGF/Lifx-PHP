@@ -46,6 +46,14 @@ class SelectorCollection implements \Countable
     }
 
     /**
+     * @return int
+     */
+    public function count(): int
+    {
+        return count($this->selectors);
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string
@@ -75,13 +83,5 @@ class SelectorCollection implements \Countable
         }
 
         return true;
-    }
-
-    /**
-     * @return int
-     */
-    public function count(): int
-    {
-        return count($this->selectors);
     }
 }

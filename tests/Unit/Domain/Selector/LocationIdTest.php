@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\LocationId;
+use PHPUnit\Framework\TestCase;
 
-class LocationIdTest extends \PHPUnit_Framework_TestCase
+class LocationIdTest extends TestCase
 {
     /**
      * @test

@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\State;
 
 use GuilleGF\Lifx\Domain\State\State;
+use PHPUnit\Framework\TestCase;
 
-class StateTest extends \PHPUnit_Framework_TestCase
+class StateTest extends TestCase
 {
     /**
      * @test

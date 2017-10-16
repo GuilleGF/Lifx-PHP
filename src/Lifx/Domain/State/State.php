@@ -3,7 +3,8 @@
 namespace GuilleGF\Lifx\Domain\State;
 
 /**
- * Class Status
+ * Class State
+ * @package GuilleGF\Lifx\Domain\State
  */
 class State
 {

@@ -4,7 +4,7 @@ namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class Location
- * @package GuilleGF\Lifx\Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class Location extends Selector
 {

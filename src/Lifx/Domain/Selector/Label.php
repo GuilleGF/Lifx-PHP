@@ -4,7 +4,7 @@ namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class Label
- * @package GuilleGF\Lifx\Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class Label extends Selector
 {

@@ -2,6 +2,10 @@
 
 namespace GuilleGF\Lifx\Domain\Validator;
 
+/**
+ * Class Validator
+ * @package GuilleGF\Lifx\Domain\Validator
+ */
 class Validator
 {
     /**

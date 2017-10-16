@@ -6,7 +6,7 @@ use GuilleGF\Lifx\Domain\Validator\Validator;
 
 /**
  * Class Id
- * @package GuilleGF\Lifx\Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class Id extends Selector
 {

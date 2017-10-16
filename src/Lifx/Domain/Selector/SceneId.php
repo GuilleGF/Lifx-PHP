@@ -6,7 +6,7 @@ use GuilleGF\Lifx\Domain\Validator\Validator;
 
 /**
  * Class SceneId
- * @package GuilleGF\Lifx\Selector
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class SceneId extends Selector
 {

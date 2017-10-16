@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\Id;
+use PHPUnit\Framework\TestCase;
 
-class IdTest extends \PHPUnit_Framework_TestCase
+class IdTest extends TestCase
 {
     /**
      * @test

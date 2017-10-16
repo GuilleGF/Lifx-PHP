@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Domain\Group;
 
 /**
  * Class Group
+ * @package GuilleGF\Lifx\Domain\Group
  */
 class Group
 {

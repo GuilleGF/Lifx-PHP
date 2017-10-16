@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\All;
+use PHPUnit\Framework\TestCase;
 
-class AllTest extends \PHPUnit_Framework_TestCase
+class AllTest extends TestCase
 {
     /**
      * @test

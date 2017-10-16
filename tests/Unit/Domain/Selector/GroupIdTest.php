@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\GroupId;
+use PHPUnit\Framework\TestCase;
 
-class GroupIdTest extends \PHPUnit_Framework_TestCase
+class GroupIdTest extends TestCase
 {
     /**
      * @test

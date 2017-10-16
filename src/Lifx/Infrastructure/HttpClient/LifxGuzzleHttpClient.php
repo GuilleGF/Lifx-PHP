@@ -2,7 +2,6 @@
 
 namespace GuilleGF\Lifx\Infrastructure\HttpClient;
 
-use GuilleGF\Lifx\LifxHttpClient;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
@@ -22,7 +21,7 @@ class LifxGuzzleHttpClient implements LifxHttpClient
      */
     public function __construct()
     {
-        $this->guzzleClient = new Client();
+        $this->guzzleClient = new Client(['verify' => false]);
     }
 
     /**

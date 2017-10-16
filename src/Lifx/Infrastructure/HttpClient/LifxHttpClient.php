@@ -1,10 +1,10 @@
 <?php
 
-namespace GuilleGF\Lifx;
+namespace GuilleGF\Lifx\Infrastructure\HttpClient;
 
 /**
- * Class LifxClient
- * @package GuilleGF\Lifx
+ * Interface LifxHttpClient
+ * @package GuilleGF\Lifx\Infrastructure\HttpClient
  */
 interface LifxHttpClient
 {

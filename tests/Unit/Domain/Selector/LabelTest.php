@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\Label;
+use PHPUnit\Framework\TestCase;
 
-class LabelTest extends \PHPUnit_Framework_TestCase
+class LabelTest extends TestCase
 {
     /**
      * @test

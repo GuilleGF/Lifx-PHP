@@ -1,9 +1,10 @@
 <?php
 
-namespace GuilleGF\Lifx;
+namespace GuilleGF\Lifx\Application;
 
-use GuilleGF\Lifx\Application\Service\LifxClient;
+use GuilleGF\Lifx\Domain\Color\Color;
 use GuilleGF\Lifx\Domain\Light\Light;
+use GuilleGF\Lifx\Domain\Light\LightCollection;
 use GuilleGF\Lifx\Domain\Selector\All;
 use GuilleGF\Lifx\Domain\Selector\Id;
 use GuilleGF\Lifx\Domain\Selector\SelectorCollection;
@@ -11,6 +12,7 @@ use GuilleGF\Lifx\Infrastructure\HttpClient\HttpClientFactory;
 
 /**
  * Class Lifx
+ * @package GuilleGF\Lifx\Application
  */
 class Lifx
 {
@@ -27,26 +29,43 @@ class Lifx
             HttpClientFactory::create(),
             $appToken
         );
-
-
     }
 
     /**
-     * @return Light[]
+     * @return LightCollection
      */
     public function lights(): array
     {
-        $lights = $this->client->listLights(new SelectorCollection([new All()]));
+        $lights = $this->client->lights(new SelectorCollection([new All()]));
 
         return $lights;
     }
 
     /**
      * @param string $id
-     * @return Light[]
+     * @return LightCollection
      */
     public function light(string $id): array
     {
         return $this->client->listLights(new SelectorCollection([new Id($id)]));
+    }
+
+    /**
+     * @param SelectorCollection $selectorCollection
+     * @return LightCollection
+     */
+    public function findLight(SelectorCollection $selectorCollection)
+    {
+        return $this->client->listLights($selectorCollection);
+    }
+
+    /**
+     * @param Light $light
+     * @param Color $color
+     * @return Light
+     */
+    public function setColor(Light $light, Color $color)
+    {
+        return $this->client->setColor($selectorCollection);
     }
 }

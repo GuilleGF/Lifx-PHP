@@ -11,6 +11,7 @@ use GuilleGF\Lifx\Domain\Validator\Validator;
 
 /**
  * Class Light
+ * @package GuilleGF\Lifx\Domain\Light
  */
 class Light
 {

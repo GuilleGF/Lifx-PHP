@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Domain\Selector;
 
 /**
  * Class All
+ * @package GuilleGF\Lifx\Domain\Selector
  */
 class All extends Selector
 {

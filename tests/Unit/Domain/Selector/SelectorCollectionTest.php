@@ -9,8 +9,9 @@ use GuilleGF\Lifx\Domain\Selector\Id;
 use GuilleGF\Lifx\Domain\Selector\Label;
 use GuilleGF\Lifx\Domain\Selector\Selector;
 use GuilleGF\Lifx\Domain\Selector\SelectorCollection;
+use PHPUnit\Framework\TestCase;
 
-class SelectorCollectionTest extends \PHPUnit_Framework_TestCase
+class SelectorCollectionTest extends TestCase
 {
     /**
      * @test

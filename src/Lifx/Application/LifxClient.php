@@ -1,14 +1,14 @@
 <?php
 
-namespace GuilleGF\Lifx\Application\Service;
+namespace GuilleGF\Lifx\Application;
 
 use GuilleGF\Lifx\Domain\Selector\SelectorCollection;
 use GuilleGF\Lifx\Domain\State\State;
-use GuilleGF\Lifx\LifxHttpClient;
+use GuilleGF\Lifx\Infrastructure\HttpClient\LifxHttpClient;
 
 /**
  * Class LifxClient
- * @package GuilleGF\Lifx\Application\Service
+ * @package GuilleGF\Lifx\Application
  */
 class LifxClient
 {
@@ -35,7 +35,7 @@ class LifxClient
      * @param SelectorCollection $selectors
      * @return mixed
      */
-    public function listLights(SelectorCollection $selectors)
+    public function lights(SelectorCollection $selectors)
     {
         return $this->httpClient->get(
             $this->ulr('lights', $selectors),
@@ -48,7 +48,7 @@ class LifxClient
      * @param State $state
      * @return mixed
      */
-    public function setLightsState(SelectorCollection $selectors, State $state)
+    public function setState(SelectorCollection $selectors, State $state)
     {
         return $this->httpClient->put(
             $this->ulr('lights', $selectors),

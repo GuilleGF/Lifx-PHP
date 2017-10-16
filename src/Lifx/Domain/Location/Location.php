@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Domain\Location;
 
 /**
  * Class Location
+ * @package GuilleGF\Lifx\Domain\Location
  */
 class Location
 {

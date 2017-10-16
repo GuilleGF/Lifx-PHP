@@ -4,6 +4,7 @@ namespace GuilleGF\Lifx\Domain\Color;
 
 /**
  * Class Color
+ * @package GuilleGF\Lifx\Domain\Color
  */
 class Color
 {

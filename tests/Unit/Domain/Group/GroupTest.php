@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Group;
 
 use GuilleGF\Lifx\Domain\Group\Group;
+use PHPUnit\Framework\TestCase;
 
-class GroupTest extends \PHPUnit_Framework_TestCase
+class GroupTest extends TestCase
 {
     /**
      * @test

@@ -3,8 +3,9 @@
 namespace GuilleGF\Lifx\Tests\Unit\Domain\Selector;
 
 use GuilleGF\Lifx\Domain\Selector\SceneId;
+use PHPUnit\Framework\TestCase;
 
-class SceneIdTest extends \PHPUnit_Framework_TestCase
+class SceneIdTest extends TestCase
 {
     /**
      * @test
