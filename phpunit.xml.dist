@@ -14,8 +14,8 @@
          bootstrap="./vendor/autoload.php">
 
     <testsuites>
-        <testsuite name="LIFX Test Suite">
-            <directory suffix=".php">./tests</directory>
+        <testsuite name="LIFX Unit Test Suite">
+            <directory suffix=".php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
 
@@ -23,6 +23,7 @@
         <whitelist>
             <directory>./src</directory>
             <exclude>
+                <directory>./src/Lifx/Infrastructure</directory>
                 <directory>./tests</directory>
                 <directory>./vendor</directory>
             </exclude>
