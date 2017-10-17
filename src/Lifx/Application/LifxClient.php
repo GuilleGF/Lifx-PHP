@@ -2,6 +2,8 @@
 
 namespace GuilleGF\Lifx\Application;
 
+use GuilleGF\Lifx\Domain\Color\Color;
+use GuilleGF\Lifx\Domain\Power\Power;
 use GuilleGF\Lifx\Domain\Selector\SelectorCollection;
 use GuilleGF\Lifx\Domain\State\State;
 use GuilleGF\Lifx\Infrastructure\HttpClient\LifxHttpClient;
@@ -54,6 +56,34 @@ class LifxClient
             $this->ulr('lights', $selectors),
             $this->headers(),
             $state
+        );
+    }
+
+    /**
+     * @param SelectorCollection $selectors
+     * @param Color $color
+     * @return mixed
+     */
+    public function setColor(SelectorCollection $selectors, Color $color)
+    {
+        return $this->httpClient->put(
+            $this->ulr('lights', $selectors),
+            $this->headers(),
+            $color
+        );
+    }
+
+    /**
+     * @param SelectorCollection $selectors
+     * @param Power $power
+     * @return mixed
+     */
+    public function setPower(SelectorCollection $selectors, Power $power)
+    {
+        return $this->httpClient->put(
+            $this->ulr('lights', $selectors),
+            $this->headers(),
+            $power
         );
     }
 

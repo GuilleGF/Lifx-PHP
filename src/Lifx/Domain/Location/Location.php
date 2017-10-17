@@ -24,18 +24,16 @@ class Location
         $this->setName($name);
     }
 
-    /**
-     * @return string
-     */
     public function id(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return Location
-     */
+    public function name(): string
+    {
+        return $this->name;
+    }
+
     private function setId(string $id): Location
     {
         if (empty($id)) {
@@ -49,18 +47,6 @@ class Location
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function name(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Location
-     */
     private function setName(string $name): Location
     {
         if (empty($name)) {

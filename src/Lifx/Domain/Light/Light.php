@@ -5,8 +5,8 @@ namespace GuilleGF\Lifx\Domain\Light;
 use GuilleGF\Lifx\Domain\Color\Color;
 use GuilleGF\Lifx\Domain\Group\Group;
 use GuilleGF\Lifx\Domain\Location\Location;
+use GuilleGF\Lifx\Domain\Power\Power;
 use GuilleGF\Lifx\Domain\Product\Product;
-use GuilleGF\Lifx\Domain\State\State;
 use GuilleGF\Lifx\Domain\Validator\Validator;
 
 /**
@@ -21,8 +21,10 @@ class Light
     private $uuid;
     /** @var string */
     private $label;
-    /** @var State */
-    private $state;
+    /** @var bool */
+    private $connected;
+    /** @var Power */
+    private $power;
     /** @var Color */
     private $color;
     /** @var Group */
@@ -37,7 +39,8 @@ class Light
      * @param string $id
      * @param string $uuid
      * @param string $label
-     * @param State $state
+     * @param bool $connected
+     * @param Power $power
      * @param Color $color
      * @param Group $group
      * @param Location $location
@@ -47,7 +50,8 @@ class Light
         string $id,
         string $uuid,
         string $label,
-        State $state,
+        bool $connected,
+        Power $power,
         Color $color,
         Group $group,
         Location $location,
@@ -56,25 +60,19 @@ class Light
         $this->setId($id);
         $this->setUuid($uuid);
         $this->setLabel($label);
-        $this->state = $state;
+        $this->connected = $connected;
+        $this->power = $power;
         $this->color = $color;
         $this->group = $group;
         $this->location = $location;
         $this->product = $product;
     }
 
-    /**
-     * @return string
-     */
     public function id(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return Light
-     */
     private function setId(string $id): Light
     {
         if (!Validator::hash12($id)) {
@@ -86,18 +84,11 @@ class Light
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function uuid(): string
     {
         return $this->uuid;
     }
 
-    /**
-     * @param string $uuid
-     * @return Light
-     */
     private function setUuid(string $uuid): Light
     {
         if (!Validator::UUID($uuid)) {
@@ -109,18 +100,11 @@ class Light
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function label(): string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     * @return Light
-     */
     private function setLabel(string $label): Light
     {
         if (empty($label)) {
@@ -132,41 +116,36 @@ class Light
         return $this;
     }
 
-    /**
-     * @return State
-     */
-    public function state(): State
+    public function isConnected(): bool
     {
-        return $this->state;
+        return $this->connected;
     }
 
-    /**
-     * @return Color
-     */
+    public function power(): Power
+    {
+        return $this->power;
+    }
+
+    public function isPowered(): bool
+    {
+        return $this->power->isPowerOn();
+    }
+
     public function color(): Color
     {
         return $this->color;
     }
 
-    /**
-     * @return Group
-     */
     public function group(): Group
     {
         return $this->group;
     }
 
-    /**
-     * @return Location
-     */
     public function location(): Location
     {
         return $this->location;
     }
 
-    /**
-     * @return Product
-     */
     public function product(): Product
     {
         return $this->product;

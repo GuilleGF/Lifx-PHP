@@ -24,18 +24,16 @@ class Group
         $this->setName($name);
     }
 
-    /**
-     * @return string
-     */
     public function id(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return Group
-     */
+    public function name(): string
+    {
+        return $this->name;
+    }
+
     private function setId(string $id): Group
     {
         if (empty($id)) {
@@ -49,18 +47,6 @@ class Group
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function name(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Group
-     */
     private function setName(string $name): Group
     {
         if (empty($name)) {

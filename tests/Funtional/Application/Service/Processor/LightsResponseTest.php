@@ -2,7 +2,7 @@
 
 namespace GuilleGF\Lifx\Tests\Funtional\Application\Service\Processor;
 
-use GuilleGF\Lifx\Application\Processor\LightsResponse;
+use GuilleGF\Lifx\Application\Processor\LightsProcessor;
 use GuilleGF\Lifx\Domain\Light\Light;
 use PHPUnit\Framework\TestCase;
 
@@ -12,12 +12,12 @@ use PHPUnit\Framework\TestCase;
  */
 class LightsResponseTest extends TestCase
 {
-    /** @var LightsResponse */
+    /** @var LightsProcessor */
     private $processor;
 
     protected function setUp()
     {
-        $this->processor = new LightsResponse();
+        $this->processor = LightsProcessor::getInstance();
     }
 
     /**
@@ -33,7 +33,7 @@ class LightsResponseTest extends TestCase
      */
     public function processOneLight()
     {
-        $data = json_decode(file_get_contents(__DIR__.'\..\..\..\Mocks\listLights.json'));
+        $data = json_decode(file_get_contents(__DIR__.'/../../../Mocks/listLights.json'));
         $lights = $this->processor->process($data);
 
         $this->assertInstanceOf(Light::class, $lights->first());

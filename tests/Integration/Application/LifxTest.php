@@ -24,6 +24,16 @@ class LifxTest extends TestCase
     {
         $lights = $this->lifx->lights();
 
-        $this->assertGreaterThan(0, $lights);
+        $this->assertGreaterThan(0, $lights->count());
+    }
+
+    /**
+     * @test
+     */
+    public function lightById()
+    {
+        $lights = $this->lifx->light('d073d513da7c');
+
+        $this->assertGreaterThan(0, $lights->count());
     }
 }
